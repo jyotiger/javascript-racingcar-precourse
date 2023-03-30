@@ -55,5 +55,14 @@ function play(count){
 }
 
 function showResult(car, last){
-console.log(`${car.getCarName()}: ${car.getForward()}`)
+    const root = document.getElementById('app');
+    let pTag = document.createElement('p');
+    let text = `${car.getCarName()}: `; 
+    for(let i=1; i<=car.getForward(); i++){
+        text += '-';
+    }
+    let textNode = document.createTextNode(text);
+    pTag.append(textNode);
+    const finalWinner = document.getElementById('final-winner');
+    root.insertBefore(pTag,finalWinner);
 }
