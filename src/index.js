@@ -22,3 +22,19 @@ function createCar(carNameList){
         carList.push(car);
     })
 }
+
+const countInput = document.getElementById('racing-count-input');
+const countSubmitBtn = document.getElementById('racing-count-submit');
+countSubmitBtn.addEventListener('click',countValidCheck);
+
+function countValidCheck(e){
+    e.preventDefault();
+    if(countInput.value < 1){
+        alert("시도할 횟수를 입력해주세요.");
+        return;
+    }
+    if(carList.length === 0){
+        alert('경주할 자동차 이름을 입력해주세요.');
+        return;
+    }
+}
