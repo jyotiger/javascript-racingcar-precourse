@@ -1,3 +1,4 @@
+import { Car } from "./car.js";
 const carInput = document.getElementById('car-names-input');
 const carSubmitBtn = document.getElementById('car-names-submit');
 carSubmitBtn.addEventListener('click',carValidCheck);
@@ -13,6 +14,11 @@ function carValidCheck(e){
     createCar(carNameList);
 }
 
+let carList = [];
 function createCar(carNameList){
-
+    carList = [];
+    carNameList.forEach(name=>{
+        const car = new Car(name);
+        carList.push(car);
+    })
 }
