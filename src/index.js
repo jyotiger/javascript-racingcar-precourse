@@ -37,4 +37,23 @@ function countValidCheck(e){
         alert('경주할 자동차 이름을 입력해주세요.');
         return;
     }
+    play(countInput.value);
+}
+
+function play(count){
+
+    carList.forEach(car=>{
+        for(let i=1; i<=count; i++){
+            const checkNumber = MissionUtils.Random.pickNumberInRange(0, 9);
+            if(checkNumber>=4){
+                car.moveForward();
+            }
+        }
+        showResult(car);
+    })
+    
+}
+
+function showResult(car){
+
 }

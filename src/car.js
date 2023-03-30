@@ -9,4 +9,8 @@ export class Car{
     moveForward(){
         this.forward += 1;
     }
+
+    getForward(){
+        return this.forward;
+    }
 }
