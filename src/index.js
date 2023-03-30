@@ -41,19 +41,19 @@ function countValidCheck(e){
 }
 
 function play(count){
-
-    carList.forEach(car=>{
-        for(let i=1; i<=count; i++){
+    for(let i=1; i<=count; i++){
+        carList.forEach((car,index)=>{
             const checkNumber = MissionUtils.Random.pickNumberInRange(0, 9);
             if(checkNumber>=4){
                 car.moveForward();
             }
-        }
-        showResult(car);
-    })
+            showResult(car, index === carList.length-1);
+        })
+        
+    }
     
 }
 
-function showResult(car){
-
+function showResult(car, last){
+console.log(`${car.getCarName()}: ${car.getForward()}`)
 }
